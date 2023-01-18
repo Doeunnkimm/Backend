@@ -17,17 +17,18 @@ public class WhileTask {
 	      String errorMessage = "다시 시도해주세요.";
 	      String goodbyeMessage = "종료합니다.";
 	      String result = null;
+	      boolean flag = false;
 	      
-	      while(choice != 5) {
+	      while(true) {
 		      System.out.println(title);
 		      System.out.println(menu);
 		      
 		      choice = scan.nextInt();
+//		      if (choice == 5) {break;}
 		      
 		      switch(choice) {
 		      case 1:
 		    	  result = redMessage;
-		    	  System.out.println("들어옴1");
 		    	  break;
 		      case 2:
 		    	  result = yellowMessage;
@@ -40,11 +41,16 @@ public class WhileTask {
 		    	  break;
 		      case 5:
 		    	  result = goodbyeMessage;
+		    	  flag = true; // 5번을 선택했을 때 flag가 true가 됨
 		    	  break;
 		      default:
 		    	  result = errorMessage;
 		    	  break;
 		      }
+		      
+		      System.out.println(result);
+		      
+		      if(flag) {break;}
 		      
 		      System.out.println(result);
 	      }
