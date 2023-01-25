@@ -2,7 +2,7 @@ package methodTest;
 
 public class MethodTest {
 //	f(x) = 2x+1
-	static int f(int x){
+	/* static */ int f(int x){
 		int result = 2*x+1;
 		return result;
 	}
@@ -14,6 +14,7 @@ public class MethodTest {
 //	2. 일반 메소드의 소속을 알려준다.
 	
 	public static void main(String[] args) {
-		f(3);
+		MethodTest methodTest = new MethodTest();
+		methodTest.f(3);
 	}
 }

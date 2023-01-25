@@ -2,7 +2,7 @@ package arrayTest;
 
 import java.util.Scanner;
 
-public class ArrayTasl {
+public class ArrayTask {
 	public static void main(String[] args) {
 //      각 버튼을 눌렀을 때, 이동하는 페이지는 다음과 같다.
 	      
@@ -45,7 +45,7 @@ public class ArrayTasl {
 			
 			// 입력한 것의 이전이 전 단계에서 입력한 게 맞는지 확인
 			// 아니라면 넘어갈 수 없음
-			if(choice - 1 != previous) { // 문제가 생겼을 때는
+			if(choice - 1 != previous && choice != 1) { // 문제가 생겼을 때는
 				previous = 0; // 이전값을 저장하고 있을 필요가 없음
 				System.out.println(arError[choice - 2]);
 				continue;
