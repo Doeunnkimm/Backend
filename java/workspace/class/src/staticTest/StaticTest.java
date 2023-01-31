@@ -23,7 +23,15 @@ public class StaticTest {
 //		Data 클래스의 인스턴스들은 모두 이 값을 공유함
 		Data.data_s = 20;
 		
-//		Data data = new Data();
+//		System.out.println(data1.data_s);
+//		System.out.println(data2.data_s);
+//		
+//		data1.data = 20;
+//		
+//		System.out.println(data1.data);
+//		System.out.println(data2.data);
+		
+		Data data = new Data();
 //		
 //		System.out.println(data.data); // 10
 //		// static은 객체로 접근하는 것이 아니라 클래스로 접근
@@ -44,19 +52,19 @@ public class StaticTest {
 //		data.increase_s();
 //		data.increase_s();
 //		
-//		data.increase();
-//		data.increase();
-//		data.increase();
-//		data.increase();
-//		
-//		data = new Data(); // 주소 바꿈
-//		
-//		data.increase(); // 값 다시 초기화 됨
-//		data.increase();
-//		data.increase();
-//		data.increase();
-//		data.increase();
-//		data.increase();
+		data.increase();
+		data.increase();
+		data.increase();
+		data.increase();
+		
+		data = new Data(); // 주소 바꿈
+		
+		data.increase(); // 값 다시 초기화 됨
+		data.increase();
+		data.increase();
+		data.increase();
+		data.increase();
+		data.increase();
 
 	}
 }

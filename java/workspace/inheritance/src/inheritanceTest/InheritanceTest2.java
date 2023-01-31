@@ -27,11 +27,11 @@ class Human {
 }
 
 class Monkey extends Human {
-//	@Override // 가독성을 위해 꼭 쓰자
-//	void walk() { // 오버라이딩
-//		// 부모꺼를 무시하고 자식에서 다시 재 정의
-//		System.out.println("두 발 또는 네 발로 걷기");
-//	}
+	@Override // 가독성을 위해 꼭 쓰자
+	void eat() { // 오버라이딩
+		// 부모꺼를 무시하고 자식에서 다시 재 정의
+		System.out.println("바나나를 주식으로 먹기");
+	}
 	
 //	단축키 함수 이름을 쓰고 Ctrl+space 하면
 //	오버라이딩 옵션 선택
@@ -52,6 +52,6 @@ public class InheritanceTest2 {
 		Monkey monkey = new Monkey();
 		human.walk(); // 두 발로 걷기
 		monkey.walk(); // 두 발로 걷기 네 발로 걷기
+		monkey.eat();
 	}
-	
 }
