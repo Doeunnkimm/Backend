@@ -5,7 +5,7 @@ package exceptionTest;
 // 따라서 무조건 강제 종료 시키고 싶다면 try/catch를 잡지말아야 하므로
 // RuntimeException을 사용해야 함
 
-public class BadWordException extends /* RuntimeException */ Exception {
+public class BadWordException extends RuntimeException /* Exception */ {
 	public BadWordException(String message) {
 		// 콘솔창에 message를 찍어주게됨
 		super(message); // 부모의 생성자에 message를 전달
