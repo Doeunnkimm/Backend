@@ -19,5 +19,28 @@ public class WrapperTest {
 		Integer data_I = data_i;
 		// auto unboxing
 		data_i = data_I;
+		
+		Integer num1 = new Integer(7); // 박싱
+		Integer num2 = new Integer(3);
+		Integer num3 = new Integer(7);
+		
+		int int1 = num1.intValue(); // 언박싱
+		int int2 = num2.intValue();
+		
+		Integer result1 = num1 + num2; // 내부적으로 오토 언박싱해서 연산
+		System.out.println(result1); // 10
+		
+		Integer result2 = int1 - int2;
+		System.out.println(result2); // 4
+		
+		System.out.println(num1 > num2); // true <- 오토언박싱
+		System.out.println(num1 == num2); // false
+		System.out.println(num1 == num3); // false <- 객체에 동등연산자를 사용하면 주소값을 비교
+		System.out.println(num1.equals(num3)); // true
+		
+		
 	}
+	
+	
+	
 }

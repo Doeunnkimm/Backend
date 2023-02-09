@@ -14,6 +14,9 @@ public class HashCodeTest {
 		// 즉, 두 해쉬코드도 같도록 hashCode도 재정의된 것
 		System.out.println(data1.hashCode()); // 64578
 		System.out.println(data2.hashCode()); // 64578
+		
+		System.out.println(data1.equals(data2)); // true
+		System.out.println(data1 == data2);
 		// 뒤에 .toString()이 생략되어 있기 때문에
 		// 출력하면 해쉬코드값이 나오게 됨
 		// 동일한 버전이라면 동일한 해쉬코드가 나오게 됨

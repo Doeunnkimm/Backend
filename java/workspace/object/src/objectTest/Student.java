@@ -29,8 +29,8 @@ public class Student {
 		this.name = name;
 	}
 
-	// 부모인 Object 클래스의 toString() 메소드를 재정의하는 것
-	// Alt + Shift + S -> S
+//	 부모인 Object 클래스의 toString() 메소드를 재정의하는 것
+//	 Alt + Shift + S -> S
 	@Override
 	public String toString() {
 		return "Student [number=" + number + ", name=" + name + "]";
