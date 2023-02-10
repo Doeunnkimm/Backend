@@ -4,7 +4,10 @@ public class User {
 	private String name;
 	private String id;
 	private String password;
-	private String phone;
+	private String phoneNumber;
+	
+	public User() {;}
+	
 	public String getName() {
 		return name;
 	}
@@ -21,12 +24,19 @@ public class User {
 		this.password = password;
 	}
 	public String getPhone() {
-		return phone;
+		return phoneNumber;
 	}
 	public void setPhone(String phone) {
-		this.phone = phone;
+		this.phoneNumber = phone;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	@Override
+	public String toString() {
+		return "User [name=" + name + ", id=" + id + ", password=" + password + ", phoneNumber=" + phoneNumber + "]";
+	}
+	
+	
 }
