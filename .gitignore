@@ -1,2 +1,4 @@
 /java/memo/OT.txt
 *.exe
+/dbms/oracle/drivers/
+/dbms/oracle/workspace/.metadata/
