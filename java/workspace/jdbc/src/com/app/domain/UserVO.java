@@ -11,8 +11,11 @@ public class UserVO {
 	private String userAddress;
 	private String userBirth;
 	private String userRecommenderId;
-	
-	public UserVO() {;}
+	private String userStatus;
+
+	public UserVO() {
+		;
+	}
 
 	public Long getUserId() {
 		return userId;
@@ -94,12 +97,20 @@ public class UserVO {
 		this.userRecommenderId = userRecommenderId;
 	}
 
+	public String getUserStatus() {
+		return userStatus;
+	}
+
+	public void setUserStatus(String userStatus) {
+		this.userStatus = userStatus;
+	}
+
 	@Override
 	public String toString() {
 		return "UserVO [userId=" + userId + ", userIdentification=" + userIdentification + ", userPassword="
 				+ userPassword + ", userName=" + userName + ", userPhone=" + userPhone + ", userNickname="
 				+ userNickname + ", userEmail=" + userEmail + ", userAddress=" + userAddress + ", userBirth="
-				+ userBirth + ", userRecommenderId=" + userRecommenderId + "]";
+				+ userBirth + ", userRecommenderId=" + userRecommenderId + ", userStatus=" + userStatus + "]";
 	}
 
 	@Override
@@ -127,5 +138,7 @@ public class UserVO {
 		return true;
 	}
 	
+
 	
+
 }
