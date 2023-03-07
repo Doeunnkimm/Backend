@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.app.domain.UserVO;
 
@@ -309,8 +311,135 @@ public class UserDAO {
 	}
 
 //  추천수
-
+	public int getCountOfRecommenderId(String userIdentification) {
+		int count = 0;
+		String query = "SELECT COUNT(USER_ID) FROM TBL_USER WHERE USER_RECOMMENDER_ID = ?";
+		Connection connection = DBConnecter.getConnection();
+		try {
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setString(1, userIdentification);
+			resultSet = preparedStatement.executeQuery();
+			resultSet.next();
+			count = resultSet.getInt(1);
+		} catch (SQLException e) {
+			System.out.println("getCountOfRecommenderId(String) SQL 오류");
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (SQLException e) {
+				throw new RuntimeException(e);
+			}
+		}
+		return count;
+	}
+	
 //  나를 추천한 사람
-
+  public List<UserVO> selectRecommenders(String userIdentification) {
+     String query = "SELECT USER_ID, USER_IDENTIFICATION, USER_PASSWORD, USER_NAME, USER_PHONE, USER_NICKNAME, USER_EMAIL, USER_ADDRESS, USER_BIRTH, USER_RECOMMENDER_ID, USER_STATUS "
+           + "FROM TBL_USER WHERE USER_RECOMMENDER_ID = ?";
+     int count = 0;
+     UserVO userVO = null;
+     List<UserVO> users = new ArrayList<UserVO>();
+     
+     connection = DBConnecter.getConnection();
+     try {
+        preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1, userIdentification);
+        resultSet = preparedStatement.executeQuery();
+        while(resultSet.next()) {
+           userVO = new UserVO();
+           userVO.setUserId(resultSet.getLong(1));
+           userVO.setUserIdentification(resultSet.getString(2));
+           userVO.setUserPassword(resultSet.getString(3));
+           userVO.setUserName(resultSet.getString(4));
+           userVO.setUserPhone(resultSet.getString(5));
+           userVO.setUserNickname(resultSet.getString(6));
+           userVO.setUserEmail(resultSet.getString(7));
+           userVO.setUserAddress(resultSet.getString(8));
+           userVO.setUserBirth(resultSet.getString(9));
+           userVO.setUserRecommenderId(resultSet.getString(10));
+           userVO.setUserStatus(resultSet.getString(11));
+           
+           users.add(userVO);
+        }
+     } catch (SQLException e) {
+        System.out.println("getCountOfRecommenderId(String) SQL 오류");
+        e.printStackTrace();
+     } catch (Exception e) {
+        e.printStackTrace();
+     } finally {
+        try {
+           if(resultSet != null) {
+              resultSet.close();
+           }
+           if(preparedStatement != null) {
+              preparedStatement.close();
+           }
+           if(connection != null) {
+              connection.close();
+           }
+        } catch (SQLException e) {
+           throw new RuntimeException(e);
+        }
+     }
+     
+     return users;
+  }
+  
+  
 //  내가 추천한 사람
+  public UserVO selectMyRecommender() {
+     String query = "SELECT USER_ID, USER_IDENTIFICATION, USER_PASSWORD, USER_NAME, USER_PHONE, USER_NICKNAME, USER_EMAIL, USER_ADDRESS, USER_BIRTH, USER_RECOMMENDER_ID, USER_STATUS "
+           + "FROM TBL_USER WHERE USER_IDENTIFICATION = (SELECT USER_RECOMMENDER_ID FROM TBL_USER WHERE USER_ID = ?)";
+     int count = 0;
+     UserVO userVO = null;
+     
+     connection = DBConnecter.getConnection();
+     try {
+        preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setLong(1, userId);
+        resultSet = preparedStatement.executeQuery();
+        if(resultSet.next()) {
+           userVO = new UserVO();
+           userVO.setUserId(resultSet.getLong(1));
+           userVO.setUserIdentification(resultSet.getString(2));
+           userVO.setUserPassword(resultSet.getString(3));
+           userVO.setUserName(resultSet.getString(4));
+           userVO.setUserPhone(resultSet.getString(5));
+           userVO.setUserNickname(resultSet.getString(6));
+           userVO.setUserEmail(resultSet.getString(7));
+           userVO.setUserAddress(resultSet.getString(8));
+           userVO.setUserBirth(resultSet.getString(9));
+           userVO.setUserRecommenderId(resultSet.getString(10));
+           userVO.setUserStatus(resultSet.getString(11));
+        }
+     } catch (SQLException e) {
+        System.out.println("getCountOfRecommenderId(String) SQL 오류");
+        e.printStackTrace();
+     } catch (Exception e) {
+        e.printStackTrace();
+     } finally {
+        try {
+           if(resultSet != null) {
+              resultSet.close();
+           }
+           if(preparedStatement != null) {
+              preparedStatement.close();
+           }
+           if(connection != null) {
+              connection.close();
+           }
+        } catch (SQLException e) {
+           throw new RuntimeException(e);
+        }
+     }
+     
+     return userVO;
+  }
+
 }

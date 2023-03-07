@@ -1,1 +1,1 @@
-{"resources":{"Scripts/member.sql":{"sql-editor-data-source-id":"oracle_thin-186af5b9895-3651a241aa4ccbf7","default-datasource":"oracle_thin-186af5b9895-3651a241aa4ccbf7","default-schema":"HR"}}}
+{"resources":{"Scripts/board.sql":{"sql-editor-data-source-id":"oracle_thin-186af5b9895-3651a241aa4ccbf7","default-datasource":"oracle_thin-186af5b9895-3651a241aa4ccbf7","default-schema":"HR"},"Scripts/member.sql":{"default-schema":"HR","sql-editor-data-source-id":"oracle_thin-186af5b9895-3651a241aa4ccbf7","default-datasource":"oracle_thin-186af5b9895-3651a241aa4ccbf7"}}}
