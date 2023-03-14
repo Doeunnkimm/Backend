@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+html body p.fruit {
+    color: pink;
+}
+
+.fruit {
+    background-color: black !important;
+}

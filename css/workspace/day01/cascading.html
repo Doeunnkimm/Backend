@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일 우선순위</title>
+    <link rel="stylesheet" href="cascading.css">
+    <style>
+        #apple {
+            color: yellow;
+        }
+
+        div.apple {
+            color: green;
+        }
+
+        .apple {
+            color: red;
+        }
+
+        .banana {
+            color: yellow;
+            background-color: black;
+        }
+
+        .fruit {
+            color: green;
+            background-color: yellow !important;
+        }
+    </style>
+</head>
+<body>
+    <p class="banana fruit">바나나</p>
+    <p class="apple" id="apple">사과</p>
+</body>
+</html>
