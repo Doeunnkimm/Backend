@@ -1,0 +1,285 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'DINPro_L';
+    font-style: normal;
+    font-weight: normal;
+    src: local('DINPro-Light'), url('font/DINPro-Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'DINPro_B';
+    font-style: normal;
+    font-weight: normal;
+    src: local('DINPro-Bold'), url('font/DINPro-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'DINPro_R';
+    font-style: normal;
+    font-weight: normal;
+    src: local('DINPro-Regular'), url('font/DINPro-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'DINPro_M';
+    font-style: normal;
+    font-weight: normal;
+    src: local('DINPro-Medium'), url('font/DINPro-Medium.otf') format('opentype');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+html {
+    line-height: 1.15;
+}
+
+body {
+    line-height: 1.15;
+    background-color: #f3f7fa;
+    letter-spacing: -.05em;
+    word-spacing: -0.05em;
+}
+
+div.wrap {
+    width: 1174px;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+div.wrap ul {
+    display: flex;
+    list-style: none;
+}
+
+div.wrap ul li {
+    width: 230px;
+    margin: 0 3px 6px;
+}
+
+div.wrap ul li div.myshop {
+    width: 230px;
+    height: 300px;
+    background-color: #fff;
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, .08);
+    cursor: pointer;
+}
+
+div.myshop p.myshop-title {
+    font-family: DINPro_L;
+    font-size: 20px;
+    font-weight: 400;
+    color: grey;
+    letter-spacing: -1px;
+    text-align: center;
+    padding: 45px 0 0;
+}
+
+div.myshop p.myshop-title strong {
+    font-family: DINPro_B;
+    font-weight: 400;
+}
+
+div.myshop p.myshop-title::before {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 22px;
+    background-image: url("https://www.sta1.com/_nuxt/img/icon-myshop@3x.00de977.png");
+    background-size: cover;
+}
+
+div.count {
+    display: flex;
+    color: #909090;
+    margin-top: 35px;
+}
+
+div.count span {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    font-family: DINPro_L;
+    font-size: 12px;
+}
+
+div.count span:first-child::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 60px;
+    background-color: #edeff0;
+    position: absolute;
+    right: -1px;
+    top: 0;
+}
+
+div.count span:last-child em {
+    color: #ff6b00;
+}
+
+div.count span em {
+    display: block;
+    font-size: 26px;
+    font-style: normal;
+    padding-top: 20px;
+}
+
+a, button {
+    color: #303030;
+    font-size: 12px;
+}
+
+article {
+    display: block;
+}
+
+.shop-card {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: #fff;
+    box-shadow: 0 1px 0 0 rgba(0,0,0,.08);
+    cursor: pointer;
+}
+
+.rank {
+    color: #ff6b00;
+}
+
+article.shop-card .rank {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-style: normal;
+    font-size: 12px;
+}
+
+div.info {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    color: #909090;
+    width: 100%;
+    top: 45px;
+    text-align: center;
+}
+
+div.img {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    margin: 0 auto;
+}
+
+.info p {
+    padding: 1px 0;
+    font-style: normal;
+    font-size: 13px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.img, .info p {
+    overflow: hidden;
+}
+
+h2.shop-name {
+    padding: 19px 0 15px;
+    color: #303030;
+    font-size: 15px;
+    display: block;
+    overflow: hidden;
+    width: 85%;
+    margin: 0 auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.info p {
+    padding: 1px 0;
+    font-style: normal;
+    font-size: 13px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.info {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    color: #909090;
+    width: 100%;
+    top: 45px;
+    text-align: center;
+}
+
+a, button {
+    color: #303030;
+    font-size: 12px;
+}
+
+div.btns {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    bottom: 0;
+    border-top: 1px solid #edeff0;
+}
+
+.button {
+    flex: 1;
+    font-size: 11px;
+    color: #909090;
+    line-height: 40px;
+    text-align: center;
+}
+
+a.button {
+    border-right: 1px solid #edeff0;
+}
+
+a.button:first-child {
+    border-right: 1px solid #edeff0;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    user-select: none;
+    cursor: pointer;
+}
+
+button.button.myshop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.button-icons {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin-left: 7px;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAE5JREFUeNrs1jEKACAMQ9FGvP8ZclNdxbEWUfiZOpUHGVrZjoOMZVZ2SYsHAgIECBAgQHyJ6Ns5rjrr1JGuQ0UV8FmBAAECBAgQ1zMFGABYogYlJB84mgAAAABJRU5ErkJggg==");
+    background-size: cover;
+    background-repeat: no-repeat;
+}

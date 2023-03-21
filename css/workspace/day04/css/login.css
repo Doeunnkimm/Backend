@@ -1,0 +1,217 @@
+body, html {
+    height: 100%;
+    line-height: 1;
+    font-size: 15px;
+    letter-spacing: -0.4px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+a {
+    border: none;
+    color: inherit;
+    text-decoration: none;
+}
+
+svg:not(:root) {
+    overflow-clip-margin: content-box;
+    overflow: hidden;
+}
+
+blockquote, body, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+
+button:focus, input[type=email]:focus, input[type=file]:focus, input[type=number]:focus, input[type=password]:focus, input[type=submit]:focus, input[type=tel]:focus, input[type=text]:focus, option:focus, select:focus, textarea:focus {
+    outline: 0;
+}
+
+main {
+    box-sizing: border-box;
+    position: relative;
+}
+
+.wrap {
+    height: 100%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    background-color: #fafafafa;
+}
+
+.main-container {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.container {
+    flex: 1 0 auto;
+    margin: 0 auto;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 40px 0;
+}
+
+.logo {
+    margin-bottom: 30px
+}
+
+.form {
+    width: 300px;
+}
+
+.email, .password {
+    position: relative;   
+}
+
+.email-input {
+    position: relative;
+    display: block;
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+    transition: 2s box-shadow,.2s background-color;
+}
+
+input.input {
+    padding: 13px 15px 14px;
+}
+
+.form-input {
+    margin: 0;
+    padding: 8px 15px 9px;
+    border: 1px solid #dbdbdb;
+    background-color: #fff;
+    box-sizing: border-box;
+    
+    font-size: 15px;
+    line-height: 21px;
+    resize: none;
+}
+
+.password-input {
+    position: relative;
+    display: block;
+    width: 100%;
+    border-radius: 0 0 4px 4px;
+    margin-top: -1px;
+    transition: .2s box-shadow,.2s background-color;
+}
+
+.btn {
+    margin: 20px 0;
+    width: 100%;
+}
+
+button.button {
+    padding: 15px 10px;
+    line-height: 20px;
+    font-size: 17px;
+    min-height: 50px;
+}
+
+button.login-btn {
+    background-color: #35c5f0;
+    border-color: #35c5f0;
+    color: #fff;
+}
+
+.btn-box {
+    user-select: none;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    background: none;
+    font-family: Noto Sans KR,Noto Sans CJK KR,맑은 고딕,Malgun Gothic,sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: color .1s,background-color .1s,border-color .1s;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.section {
+    width: 100%;
+    text-align: center;
+}
+
+.section a.item:first-of-type {
+    margin-left: 0px;
+}
+
+.section a.item:last-of-type {
+    margin-left: 20px;
+}
+
+.fast-login-signup {
+    margin: 35px 0 15px;
+    color: #757575;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.33;
+    text-align: center;
+}
+
+.facebook, .kakao, .naver {
+    margin: 0 10px;
+    transition: .1s opacity;
+}
+
+a.login-err-text {
+    margin-top: 24px;
+    color: #c2c8cc;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.non-signup-buy-section {
+    width: 100%;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #dbdbdb;
+}
+
+svg:not(:root) {
+    overflow-clip-margin: content-box;
+    overflow: hidden;
+}
+
+.non-signup-buy-btn {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #424242;
+    margin-bottom: 20px;
+}
+
+.hidden-bottom {
+    padding: 3px;
+    margin: -3px;
+    box-sizing: border-box;
+}
+
+.footer {
+    width: 100%;
+    color: #757575;
+    font-size: 10px;
+    line-height: 20px;
+    margin: -5px 0 25px;
+    text-align: center;
+}
