@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>name을 이용한 선택</title>
+  </head>
+  <body>
+    <h1>name 속성을 이용한 선택</h1>
+    <form name="join-form">
+      <div>
+        <div>
+          <input type="text" name="id" placeholder="아이디" />
+        </div>
+        <div>
+          <input type="password" name="password" placeholder="패스워드" />
+        </div>
+        <input type="checkbox" name="language" value="c" onClick="clickCheck()" /> C
+        <input type="checkbox" name="language" value="Java" onClick="clickCheck()" /> Java
+        <input type="checkbox" name="language" value="Python" onClick="clickCheck()" /> Python
+        <div>
+          <input type="button" class="send" value="로그인" onclick="send()" />
+        </div>
+      </div>
+    </form>
+  </body>
+  <script>
+    const checkboxes = document.getElementsByName('language');
+    checkboxes.forEach(checkbox => (checkbox.checked = true));
+
+    function clickCheck() {
+      const checkboxes = document.getElementsByName('language');
+      checkboxes.forEach(checkbox => console.log(checkbox.checked));
+    }
+
+    // 미리 작성된 텍스트는 innerText
+    // 사용자가 입력한 값은 value
+    function send() {
+      const id = document.getElementsByName('id');
+      //   console.log(id); // NodeList [input] <-- list
+      if (!id[0].value) {
+        // 값이 없다면
+        alert('아이디를 입력하세요');
+      }
+    }
+  </script>
+</html>
