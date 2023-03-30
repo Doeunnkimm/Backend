@@ -1,0 +1,52 @@
+body {
+  font-family: 'NanumSquareNeo';
+}
+
+fieldset {
+  width: 60%;
+  margin: 0 auto;
+}
+
+legend {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div > p {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+div > input {
+  border: none;
+  width: 60%;
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 8px;
+  font-size: 20px;
+  margin-top: 50px;
+}
+
+div > input:focus-visible {
+  outline: none;
+}
+
+div > button {
+  width: 10%;
+  height: 35px;
+  margin-top: 10px;
+  border: none;
+  background-color: gold;
+}
+
+div > button:hover {
+  cursor: pointer;
+}
