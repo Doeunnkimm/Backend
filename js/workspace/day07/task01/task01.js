@@ -1,28 +1,41 @@
-HTMLCollection.prototype.forEach = Array.prototype.forEach;
+/* 
+    task01.html
+ */
 
-const input = document.getElementById('type-input');
-const button = document.getElementById('type-button');
-const arLine = document.getElementsByClassName('line');
-const arType = document.getElementsByClassName('type');
+globalThis.temp;
 
-console.log(arLine);
+function confirm() {
+  const input = document.querySelector('#input');
+  const trs = document.querySelectorAll('tbody tr');
+  let check = false;
 
-const typeList = [];
-arType.forEach(el => typeList.push(el.innerHTML));
-
-function onClickButton() {
-  const index = typeList.indexOf(input.value);
-
-  if (!input.value) {
-    return;
+  if (globalThis.temp) {
+    globalThis.temp.style.background = '#fff';
+    globalThis.temp.firstElementChild.innerHTML =
+      globalThis.temp.firstElementChild.innerHTML.replace('★', '');
   }
-  if (index === -1) {
-    alert('다시 시도해주세요');
-    arLine.forEach(line => (line.style.backgroundColor = 'white'));
-    return;
+
+  trs.forEach(tr => {
+    let td = tr.firstElementChild;
+    if (input.value == td.innerHTML) {
+      check = true;
+      globalThis.temp = tr;
+      tr.style.background = '#ef5350';
+      td.innerHTML = '★' + td.innerHTML;
+    }
+  });
+
+  // for(let i=0; i<trs.length; i++){
+  //     let td = trs[i].firstElementChild;
+  //     if(input.value == td.innerHTML){
+  //         check = true;
+  //         globalThis.temp = trs[i];
+  //         trs[i].style.background = "#ef5350";
+  //         td.innerHTML = "★" + td.innerHTML;
+  //     }
+  // }
+
+  if (!check) {
+    alert('다시 시도해주세요.');
   }
-  arLine.forEach(line => (line.style.backgroundColor = 'white'));
-  arLine[index].style.backgroundColor = 'pink';
 }
-
-button.addEventListener('click', onClickButton);
