@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery 기초 예제 2</title>
+  </head>
+  <body>
+    <ul class="car">
+      <li>G바겐</li>
+      <li>벤틀리</li>
+      <li id="super">마세라티</li>
+    </ul>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    const $lists = $('li');
+    const $ul = $('ul.car');
+    const $super = $('#super');
+
+    // 이전 요소 prev()
+    // console.log($super.prev().text());
+
+    // 다음 요소 next()
+    // console.log($ul.children().first().next().text());
+
+    // find() : 자식 요소에서 검색
+    // $(document.body).find('#super').text('페라리');
+
+    // closest() : 부모 요소에서 검색. 가장 가까운 객체부터 찾게 됨
+    // $super
+    //   .closest('.car')
+    //   .children()
+    //   .each((i, li) => console.log($(li).text())); // each로 돌리게 되는 순간 JS가 되어버림
+
+    // console.log($(document.body).children().children('#super').text('페라리'));
+
+    // console.log($ul); //S.fn.init [ul.car, prevObject: S.fn.init(1)]
+    // $ul.css('list-style', 'none'); // 배열의 길이가 1이라면 바로 접근 가능(.eq(0)g할 필요 없이)
+
+    // console.log($ul.children()); // S.fn.init(1) <- init이 붙으면 jQuery 객체
+    // $ul.children().first().css('color', 'red'); // 첫 번째 자식 요소
+    // $ul.children().last().css('color', 'blue'); // 첫 번째 자식 요소
+
+    // console.log($lists);
+    // jQuery 객체를 []로 접근하면 JS 객체로 변경된다.
+    // $lists[0].style.color = 'blue';
+    // $($lists[0]).css('color', 'blue');
+    // $lists.eq(0).css('color', 'blue');
+
+    console.log($ul);
+  </script>
+</html>
