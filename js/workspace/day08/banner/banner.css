@@ -5,6 +5,7 @@ body {
 }
 
 section.container {
+  position: relative;
   width: 1500px;
   height: 375px;
   margin: 0 auto;
@@ -12,7 +13,7 @@ section.container {
 }
 
 div.banner {
-  width: 9000px;
+  width: 10500px;
   height: 375px;
   transform: translate(-1500px);
 }
@@ -23,4 +24,48 @@ div.banner div {
   background-size: 100%;
   background-repeat: no-repeat;
   float: left;
+}
+
+div.arrow {
+  cursor: pointer;
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 2rem;
+  background-color: #0000005c;
+  color: white;
+}
+
+div.prev {
+  left: 70px;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+div.next {
+  right: 70px;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+div.dots {
+  position: absolute;
+  display: flex;
+  width: 110px;
+  justify-content: space-between;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+div.dot {
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #313131;
+  bottom: 10px;
 }
