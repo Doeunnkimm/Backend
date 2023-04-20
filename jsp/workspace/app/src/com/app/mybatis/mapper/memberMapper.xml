@@ -11,6 +11,10 @@
 		select member_identification from tbl_member where member_identification = #{memberIdentification}
 	</select>
 	
+	<select id="selectEmail" resultType="string">
+		select member_email from tbl_member where member_email = #{memberEmail}
+	</select>
+	
 	<select id="login" resultType="long">
 		select member_id from tbl_member 
 		where member_identification = #{memberIdentification} and member_password = #{memberPassword}

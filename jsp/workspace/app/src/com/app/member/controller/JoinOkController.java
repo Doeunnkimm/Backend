@@ -13,7 +13,7 @@ import com.app.member.domain.MemberVO;
 
 public class JoinOkController implements Action{
 	@Override
-	public Result execute(HttpServletRequest req, HttpServletResponse rep) throws IOException, ServletException {
+	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		MemberDAO memberDAO = new MemberDAO();
 		MemberVO memberVO = new MemberVO();
 		Result result = new Result();

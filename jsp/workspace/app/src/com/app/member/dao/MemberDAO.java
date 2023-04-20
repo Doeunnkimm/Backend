@@ -24,6 +24,11 @@ public class MemberDAO {
 		return sqlSession.selectOne("member.selectIdentification", memberIdentification);
 	}
 	
+//	이메일 중복검사
+	public String selectEmail(String memberEmail) {
+		return sqlSession.selectOne("member.selectEmail", memberEmail);
+	}
+	
 //	로그인
 	public Long login(String memberIdentification, String memberPassword) {
 		HashMap<String, String> loginMap = new HashMap<String, String>();

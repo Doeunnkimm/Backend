@@ -14,7 +14,7 @@ import com.app.member.dao.MemberDAO;
 public class LoginOkController implements Action {
 
 	@Override
-	public Result execute(HttpServletRequest req, HttpServletResponse rep) throws IOException, ServletException {
+	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		MemberDAO memberDAO = new MemberDAO();
 		Long memberId = memberDAO.login(req.getParameter("memberIdentification"), req.getParameter("memberPassword"));
 		HttpSession session = req.getSession();
@@ -28,7 +28,7 @@ public class LoginOkController implements Action {
 		}else {
 //			로그인 성공
 			session.setAttribute("memberId", memberId);
-			result.setPath(req.getContextPath() + "/list.board");
+			result.setPath(req.getContextPath() + "/listOk.board");
 		}
 		return result;
 	}

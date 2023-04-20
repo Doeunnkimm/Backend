@@ -1,4 +1,4 @@
-package com.app.member;
+package com.app.board;
 
 import java.io.IOException;
 
@@ -8,13 +8,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.board.controller.ListOkController;
 import com.app.member.controller.CheckEmailOkController;
 import com.app.member.controller.CheckIdOkController;
 import com.app.member.controller.JoinOkController;
 import com.app.member.controller.LoginOkController;
 
-public class MemberFrontController extends HttpServlet {
-
+public class BoardFrontController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
@@ -22,32 +22,10 @@ public class MemberFrontController extends HttpServlet {
 		String target = req.getRequestURI().replace(req.getContextPath() + "/", "").split("\\.")[0];
 		Result result = null;
 		
-		if(target.equals("checkIdOk")) {
-			result = new CheckIdOkController().execute(req, resp);
+		if(target.equals("listOk")) {
+			result = new ListOkController().execute(req, resp);
 			
-		} else if(target.equals("checkEmailOk")) {
-			result = new CheckEmailOkController().execute(req, resp);
-			
-		} else if(target.equals("join")){
-			result = new Result();
-			result.setPath("templates/member/join.jsp");
-			
-		} else if(target.equals("joinOk")){
-			result = new JoinOkController().execute(req, resp);
-			
-		} else if(target.equals("login")){
-			result = new Result();
-			result.setPath("templates/member/login.jsp");
-			
-		} else if(target.equals("loginOk")) {
-			result = new LoginOkController().execute(req, resp);
-			
-		} else if(target.equals("logout")) {
-			req.getSession().invalidate();
-			result = new Result();
-			result.setPath("templates/member/login.jsp");
-		}
-		
+		} 
 		
 		if(result != null) {
 			if(result.isRedirect()) {
@@ -62,5 +40,5 @@ public class MemberFrontController extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doGet(req, resp);
 	}
-	
+
 }

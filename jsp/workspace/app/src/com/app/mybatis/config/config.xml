@@ -5,6 +5,11 @@
 	<settings>
 		<setting name="mapUnderscoreToCamelCase" value="true"/>
 	</settings>
+	
+	<typeAliases>
+		<typeAlias type="com.app.board.domain.BoardVO" alias="boardVO"/>
+		<typeAlias type="com.app.board.domain.BoardDTO" alias="boardDTO"/>
+	</typeAliases>
 
 	<environments default="mysql">
 		<environment id="mysql">
@@ -17,6 +22,11 @@
 			</dataSource>
 		</environment>
 	</environments>
+	
+	<mappers>
+		<mapper resource="com/app/mybatis/mapper/memberMapper.xml"/>
+		<mapper resource="com/app/mybatis/mapper/boardMapper.xml"/>
+	</mappers>
 </configuration>
 
 

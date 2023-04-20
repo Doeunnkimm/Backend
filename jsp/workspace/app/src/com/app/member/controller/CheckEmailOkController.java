@@ -14,47 +14,27 @@ import com.app.Action;
 import com.app.Result;
 import com.app.member.dao.MemberDAO;
 
-public class CheckIdOkController implements Action{
+public class CheckEmailOkController implements Action {
+
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		resp.setContentType("text/html;charset=utf-8");
+		String memberEmail = req.getParameter("memberEmail");
 		MemberDAO memberDAO = new MemberDAO();
-		String memberIdentification = memberDAO.selectIdentification(req.getParameter("memberIdentification"));
-		boolean check = memberIdentification == null;
-		
+		boolean check = memberDAO.selectEmail(memberEmail) == null;
 		JSONObject result = new JSONObject();
+		
 		try {
 			result.put("check", check);
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
 		
-		resp.setContentType("text/html;charset=utf-8");
-		
 		PrintWriter out = resp.getWriter();
 		out.print(result.toString());
 		out.close();
+		
 		return null;
 	}
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
