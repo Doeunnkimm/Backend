@@ -62,7 +62,11 @@ function notCheckedSaveId(){
 }
 
 /*정렬 이벤트 및 스타일 변경*/
-
+const $orders = $("section.order a");
+$orders.on("click", function(e){
+	let i = $orders.index(this);
+	location.href=`${contextPath}/listOk.board?sort=${i == 0 ? 'recent' : 'popular'}`;
+});
 
 /*시간 계산*/
 function elapsedTime(date) {

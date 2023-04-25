@@ -26,7 +26,7 @@
             <article id="info-container">
                 <h6 class="info">게시글 작성하기</h6>
                 <section class="move-page">
-                    <a href="javascript:location.href='${pageContext.request.contextPath}/board/listOk.board?page=${page}&sort=${sort}&type=${empty type ? 'null' : type}&keyword=${keyword}'">목록으로</a>
+                    <a href="javascript:location.href='${pageContext.request.contextPath}/board/listOk.board'">목록으로</a>
                 </section>
             </article>
             <form action="${pageContext.request.contextPath}/board/writeOk.board" name="writeForm" method="post" enctype="multipart/form-data">
@@ -38,7 +38,7 @@
                 <div id="write-title-wrap" class="wrap">
                     <div class="profile write-profile">
                         <div><img src="${pageContext.request.contextPath}/static/images/profile.png" width="15px"></div>
-                        <h6 class="writer"></h6>
+                        <h6 class="writer">한동석</h6>
                     </div>
                     <label>제목</label>
                 </div>

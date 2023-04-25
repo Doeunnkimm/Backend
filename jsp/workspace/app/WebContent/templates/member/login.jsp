@@ -74,6 +74,14 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/member/login.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/modal/modal.js"></script>
+<script>
+	let autoLogin = "${autoLogin}";
+	console.log(autoLogin);
+	if(autoLogin){
+		$("input[name='auto-login']").prop("checked", true);
+		checkedAutoLogin();
+	}
+</script>
 </html>
 <c:if test="${not empty param.login}">
 	<script>

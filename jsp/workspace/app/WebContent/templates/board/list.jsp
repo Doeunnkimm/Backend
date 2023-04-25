@@ -19,15 +19,32 @@
         </section>
         <section id="info-wrap">
             <article id="info-container">
-                <h6 class="info">게시글 목록<br>개</h6>
+                <h6 class="info">게시글 목록<br>${total}개</h6>
                 <section class="order">
-                    <a>최신순</a>
-                    <a>인기순</a>
+                    <a class="${sort == null or sort == 'recent' ? 'selected' : ''}">최신순</a>
+                    <a class="${sort == 'popular' ? 'selected' : ''}">인기순</a>
                 </section>
             </article>
             <section id="content-wrap">
-                <ul></ul>
+                <ul>
+                </ul>
                 <div id="paging-wrap">
+                	<c:if test="${prev}">
+	                	<a href="${pageContext.request.contextPath}/listOk.board?page=${startPage - 1}" class="paging paging-move"><img src="/static/images/prev.png" width="15px"></a>
+                	</c:if>
+                	<c:forEach var="i" begin="${startPage}" end="${endPage}">
+                		<c:choose>
+                			<c:when test="${i eq page}">
+			                	<a href="javascript:void(0)" class="paging paging-checked"><c:out value="${i}"/></a>
+                			</c:when>
+                			<c:otherwise>
+			                    <a href="${pageContext.request.contextPath}/listOk.board?page=${i}" class="paging"><c:out value="${i}"/></a>
+                			</c:otherwise>
+                		</c:choose>
+                	</c:forEach>
+                	<c:if test="${next}">
+	                    <a href="${pageContext.request.contextPath}/listOk.board?page=${endPage + 1}" class="paging paging-move"><img src="/static/images/next.png" width="15px"></a>
+                	</c:if>
                 </div>
             </section>
         </section>
@@ -37,9 +54,10 @@
 <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/board/board.js"></script>
 <script>
-	let boards = JSON.parse(`${boards}`);
-	console.log(boards);
+	let boards = `${boards}`;
+	let contextPath = `${pageContext.request.contextPath}`;
 </script>
+<script src="${pageContext.request.contextPath}/static/js/board/list.js"></script>
 </html>
 
 

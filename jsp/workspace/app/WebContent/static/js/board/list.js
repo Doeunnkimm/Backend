@@ -2,16 +2,17 @@
 showList();
 
 function showList(){
+	console.log(boards);
 	boards = JSON.parse(boards);
-	files = JSON.parse(files);
-	console.log(files);
+	//files = JSON.parse(files);
 	const $ul = $("#content-wrap ul");
 	let text = "";
+	
 	boards.forEach(board => {
 		text += `
 			<li>
 		        <div>
-		            <a href="javascript:location.href='${contextPath}/board/detailOk.board?boardId=${board.boardId}&page=${page}&sort=${sort}&type=${type}&keyword=${keyword}'">
+		            <a href="javascript:location.href='${contextPath}/board/detailOk.board'">
 		                <section class="content-container">
 		                    <div class="profile">
 		                        <div><img src="${contextPath}/static/images/profile.png" width="15px"></div>
@@ -25,17 +26,40 @@ function showList(){
 		                    </h6>
 		                </section>
 			`;
-			if(files[board.boardId]){
+			/*if(files[board.boardId]){
 				text += `<img src="${contextPath}/upload/${files[board.boardId].fileSystemName}" class="preview">`;
-			}
+			}*/
 			text += `
 		            </a>
 		        </div>
 		    </li>
 			`;
 	});
+	
+	if(boards.length == 0){
+		text += `
+			<li>
+		        <div>
+					현재 게시글이 없습니다. 게시글 작성을 해보세요!
+				</div>
+			</li>
+		`
+	}
+	
 	$ul.append(text);
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

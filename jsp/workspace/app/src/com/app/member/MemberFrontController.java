@@ -11,7 +11,9 @@ import com.app.Result;
 import com.app.member.controller.CheckEmailOkController;
 import com.app.member.controller.CheckIdOkController;
 import com.app.member.controller.JoinOkController;
+import com.app.member.controller.LoginController;
 import com.app.member.controller.LoginOkController;
+import com.app.member.controller.LogoutController;
 
 public class MemberFrontController extends HttpServlet {
 
@@ -36,18 +38,14 @@ public class MemberFrontController extends HttpServlet {
 			result = new JoinOkController().execute(req, resp);
 			
 		} else if(target.equals("login")){
-			result = new Result();
-			result.setPath("templates/member/login.jsp");
+			result = new LoginController().execute(req, resp);
 			
 		} else if(target.equals("loginOk")) {
 			result = new LoginOkController().execute(req, resp);
 			
 		} else if(target.equals("logout")) {
-			req.getSession().invalidate();
-			result = new Result();
-			result.setPath("templates/member/login.jsp");
+			result = new LogoutController().execute(req, resp);
 		}
-		
 		
 		if(result != null) {
 			if(result.isRedirect()) {
