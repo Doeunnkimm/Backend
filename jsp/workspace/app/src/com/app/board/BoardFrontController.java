@@ -8,11 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.board.controller.DeleteOkController;
+import com.app.board.controller.DetailOkController;
 import com.app.board.controller.ListOkController;
-import com.app.member.controller.CheckEmailOkController;
-import com.app.member.controller.CheckIdOkController;
-import com.app.member.controller.JoinOkController;
-import com.app.member.controller.LoginOkController;
+import com.app.board.controller.UpdateController;
+import com.app.board.controller.UpdateOkController;
+import com.app.board.controller.WriteOkController;
 
 public class BoardFrontController extends HttpServlet{
 	@Override
@@ -25,7 +26,26 @@ public class BoardFrontController extends HttpServlet{
 		if(target.equals("listOk")) {
 			result = new ListOkController().execute(req, resp);
 			
-		} 
+		} else if(target.equals("write")) {
+			result = new Result();
+			result.setPath("templates/board/write.jsp");
+			
+		} else if(target.equals("writeOk")) {
+			result = new WriteOkController().execute(req, resp);
+			
+		} else if(target.equals("detailOk")) {
+			result = new DetailOkController().execute(req, resp);
+			
+		} else if(target.equals("update")) {
+			result = new UpdateController().execute(req, resp);
+			
+		} else if(target.equals("updateOk")) {
+			result = new UpdateOkController().execute(req, resp);
+			
+		} else if(target.equals("deleteOk")) {
+			result = new DeleteOkController().execute(req, resp);
+			
+		}
 		
 		if(result != null) {
 			if(result.isRedirect()) {

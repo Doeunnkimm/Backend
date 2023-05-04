@@ -9,6 +9,7 @@
 	<typeAliases>
 		<typeAlias type="com.study.board.domain.BoardVO" alias="boardVO"/>
 		<typeAlias type="com.study.board.domain.BoardDTO" alias="boardDTO"/>
+		<typeAlias type="com.study.file.domain.FileVO" alias="fileVO"/>
 	</typeAliases>
 
 	<environments default="mysql">
@@ -25,6 +26,7 @@
 	
 	<mappers>
 		<mapper resource="com/study/mybatis/mapper/boardMapper.xml"/>
+		<mapper resource="com/study/mybatis/mapper/fileMapper.xml"/>
 	</mappers>
 </configuration>
 

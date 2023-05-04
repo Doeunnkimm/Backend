@@ -29,7 +29,7 @@
                     <a href="javascript:location.href='${pageContext.request.contextPath}/board/listOk.board'">목록으로</a>
                 </section>
             </article>
-            <form action="${pageContext.request.contextPath}/board/writeOk.board" name="writeForm" method="post" enctype="multipart/form-data">
+            <form action="${pageContext.request.contextPath}/writeOk.board" name="writeForm" method="post" enctype="multipart/form-data">
                 <legend>
                     <h3>
                         게시글을 <span class="text-accent2">바른말</span>로 <span class="text-accent1">이쁘게</span> 작성해보세요

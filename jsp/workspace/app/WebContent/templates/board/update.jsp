@@ -26,11 +26,11 @@
             <article id="info-container">
                 <h6 class="info">게시글 수정하기</h6>
                 <section class="order">
-                    <a href="javascript:location.href='${pageContext.request.contextPath}/board/listOk.board'">목록으로</a>
+                    <a href="javascript:location.href='${pageContext.request.contextPath}/listOk.board'">목록으로</a>
                 </section>
             </article>
-            <form action="${pageContext.request.contextPath}/board/updateOk.board" name="writeForm" method="post" enctype="multipart/form-data">
-            	<input type="hidden" name="boardId" value="">
+            <form action="${pageContext.request.contextPath}/updateOk.board" name="writeForm" method="post" enctype="multipart/form-data">
+            	<input type="hidden" name="boardId" value="${board.boardId}">
                 <legend>
                     <h3>
                         게시글을 <span class="text-accent2">바른말</span>로 <span class="text-accent1">이쁘게</span> 작성해보세요
@@ -39,19 +39,19 @@
                 <div id="write-title-wrap" class="wrap">
                     <div class="profile write-profile">
                         <div><img src="${pageContext.request.contextPath}/static/images/profile.png" width="15px"></div>
-                        <h6 class="writer"></h6>
+                        <h6 class="writer"><c:out value="${board.memberName}"/></h6>
                     </div>
                     <label>제목</label>
                 </div>
                 <span class="title area">
-                    <textarea rows="1" name="boardTitle" placeholder="멋진 제목을 작성해보세요."></textarea>
+                    <textarea rows="1" name="boardTitle" placeholder="멋진 제목을 작성해보세요."><c:out value="${board.boardTitle}"/></textarea>
                     <div class="textarea-count">0/30</div>
                 </span>
                 <div id="write-content-wrap" class="wrap">
                     <label>내용</label>
                 </div>
                 <span class="content area">
-                    <textarea rows="3" name="boardContent" placeholder="여러분의 글솜씨를 보여주세요."></textarea>
+                    <textarea rows="3" name="boardContent" placeholder="여러분의 글솜씨를 보여주세요."><c:out value="${board.boardContent}"/></textarea>
                     <div class="textarea-count">0/5,000</div>
                 </span>
                 <div class="attach-wrap">

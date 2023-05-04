@@ -4,6 +4,60 @@ const $writeTextarea = $("form[name='writeForm'] textarea");
 const replyTexts = ['취소', ' ', '댓글 달기'];
 const $ul = $("#replies-wrap ul");
 const $dimmed = $("div.logo-area");
+/*=======================================================================*/
+/*Ajax CRUD*/
+/*=======================================================================*/
+let page = 1;
+showList();
+
+/*$(window).scroll(function(){
+	//if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+	if (Math.ceil(window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+		page++;
+		showList();
+	}
+});*/
+
+$("#more-replies").on("click", function(){
+	page++;
+	showList();
+})
+
+function showList(){
+	$.ajax({
+		url: contextPath + `/listOk.reply?boardId=${boardId}&page=${page}`,
+		dataType: "json",
+		success: function(replies){
+			let text = "";
+			
+			replies.forEach(reply => {
+				text += `
+					<li>
+	                    <div>
+	                        <section class="content-container">
+	                            <div class="profile">
+	                                <div><img src="/static/images/reply_profile.png" width="15px"></div>
+	                                <h6 class="writer">${reply.memberName}</h6>
+	                            </div>
+	                            <h4 class="title">${reply.replyContent}</h4>
+	                            <h6 clss="board-info">
+	                                <span class="date">${elapsedTime(reply.replyRegisterDate)}</span>
+	                            </h6>
+	                        </section>
+	                    </div>
+	                </li>
+				`;
+			})
+			
+			$("#replies-wrap ul").append(text);				
+		}
+	});
+}
+
+
+
+
+
 
 /*=======================================================================*/
 /*퍼블리싱*/

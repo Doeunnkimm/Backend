@@ -65,7 +65,8 @@ function notCheckedSaveId(){
 const $orders = $("section.order a");
 $orders.on("click", function(e){
 	let i = $orders.index(this);
-	location.href=`${contextPath}/listOk.board?sort=${i == 0 ? 'recent' : 'popular'}`;
+	$form.find("input[name='sort']").val(i == 0 ? 'recent' : 'popular');
+	$form.submit();
 });
 
 /*시간 계산*/

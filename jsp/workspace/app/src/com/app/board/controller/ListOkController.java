@@ -41,6 +41,7 @@ public class ListOkController implements Action {
 		pagable.put("keyword", search.getKeyword());
 		pagable.put("offset", criteria.getOffset());
 		pagable.put("rowCount", criteria.getRowCount());
+		pagable.put("sort", sort);
 		
 		boardDAO.selectAll(pagable).stream().map(board -> new JSONObject(board)).forEach(jsonArray::put);
 		req.setAttribute("boards", jsonArray.toString());

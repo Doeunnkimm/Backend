@@ -15,7 +15,9 @@
 <header>
     <div id="header">
         <div id="logo">
-            <img src="${pageContext.request.contextPath}/static/images/logo.png">
+        	<a href="${pageContext.request.contextPath}/listOk.board">
+            	<img src="${pageContext.request.contextPath}/static/images/logo.png">
+            </a>
         </div>
         <div id="search">
             <div class="search-wrap">
@@ -31,7 +33,7 @@
 			        </div>
                     <div class="search-container">
                         <input type="text" autocomplete="off" name="keyword" value="${keyword}">
-                        <button type="submit" onclick=""><img src="${pageContext.request.contextPath}/static/images/search.png"
+                        <button type="submit"><img src="${pageContext.request.contextPath}/static/images/search.png"
                                 width="20px"></button>
                     </div>
                 </form>
