@@ -1,0 +1,7 @@
+프로젝트 기본 경로
+	1) src/main/java : 서버단 JAVA 파일
+	2) src/main/resources : 설정 파일 및 뷰단
+	3) src/main/resources/static : css, js, image 등의 경로
+	4) src/main/resources/templates : html 파일 경로
+	5) src/main/resources/application.yml : 서버, 경로 및 DB 설정 파일
+	6) src/test : 단위 테스트 JAVA 파일(jUnit, Assertions)
